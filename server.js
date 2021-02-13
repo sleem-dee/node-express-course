@@ -15,6 +15,14 @@ app.get('/users', (req, res) => res.json({
     users: mockUserData
 }))
 
+app.get('/users/:id', (req, res) => {console.log(req.params.id)
+   res.json({
+       success: true,
+       message: 'got one user',
+       user: req.params.id
+   }) 
+})
+
 app.listen(port, () => console.log(`express app listening on port port! 3002`))
 
 
